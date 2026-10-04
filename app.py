@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request
 
 app = Flask(__name__)
 
@@ -13,6 +13,14 @@ def home():
 @app.get("/health")
 def health():
     return jsonify(status="ok"), 200
+
+
+@app.post("/api/chat")
+def chat():
+    data = request.get_json(silent=True) or {}
+    message = data.get("message", "")
+    reply = f"Echo from AI service: '{message}'. Hook model pipeline here."
+    return jsonify({"reply": reply}), 200
 
 
 if __name__ == "__main__":
