@@ -27,6 +27,15 @@ test:
 run:
 	$(VENV)/bin/python app.py
 
+up:
+	docker compose up -d --build
+
+down:
+	docker compose down
+
+logs:
+	docker compose logs -f
+
 ci: install format-check test
 
 clean:

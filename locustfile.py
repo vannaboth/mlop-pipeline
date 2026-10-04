@@ -8,6 +8,6 @@ class WebsiteUser(HttpUser):
     def home(self):
         self.client.get("/")
 
-    @task(1)
-    def health(self):
-        self.client.get("/health")
+    @task(2)
+    def chat(self):
+        self.client.post("/api/chat", json={"message": "Hello from load test"})
