@@ -7,7 +7,7 @@ def test_home():
     response = client.get("/")
 
     assert response.status_code == 200
-    assert b"SimpleSite" in response.data
+    assert b"Aura" in response.data
 
 
 def test_health():
@@ -17,3 +17,12 @@ def test_health():
 
     assert response.status_code == 200
     assert response.get_json() == {"status": "ok"}
+
+
+def test_chat():
+    client = app.test_client()
+
+    response = client.post("/api/chat", json={"message": "ping"})
+
+    assert response.status_code == 200
+    assert "reply" in response.get_json()
