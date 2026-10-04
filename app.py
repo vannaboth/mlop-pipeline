@@ -8,7 +8,7 @@ app = Flask(__name__)
 # Config: Cloud Free API (Groq) or Local SLM (Ollama)
 AI_PROVIDER = os.getenv("AI_PROVIDER", "groq").lower()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
-GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.1-8b-instant")
+GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://ollama:11434")
 SLM_MODEL = os.getenv("SLM_MODEL", "qwen2.5:0.5b")
 
