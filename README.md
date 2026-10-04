@@ -46,17 +46,24 @@ Runs on push and pull requests to `main`/`master`:
 
 ---
 
-## 3. Free Deployment on Render
+## 3. 100% Free Deployment on Render (with Free LLM API)
 
-This project includes [`render.yaml`](render.yaml) for zero-cost hosting.
+This project runs 100% free on **Render Free Web Service** using **Groq Free Cloud LLM** (Llama 3.1 8B):
 
-### Setup Instructions:
-1. Push this repository to GitHub.
-2. Sign in to [Render](https://render.com/) (free tier).
-3. Click **New +** -> **Blueprint**.
-4. Connect your GitHub repository.
-5. Render detects `render.yaml` and deploys the web service as a free Docker service.
-6. Auto-deploy updates your app on every git push.
+### Steps:
+1. **Get Free Groq API Key**:
+   - Go to [Groq Console](https://console.groq.com/).
+   - Sign up (free, no credit card required).
+   - Create an API key (`gsk_...`).
+
+2. **Deploy on Render**:
+   - Push this repo to GitHub.
+   - Go to [Render Dashboard](https://dashboard.render.com/) -> **New +** -> **Blueprint**.
+   - Select your repository.
+   - When prompted for `GROQ_API_KEY`, paste your key.
+   - Click **Apply**.
+
+Render deploys your frontend web service on the **Free Plan ($0/month)** with instant, ultra-fast AI responses powered by `llama-3.1-8b-instant`.
 
 ---
 
